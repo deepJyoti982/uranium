@@ -5,6 +5,12 @@ const formatter = require('../validator/formatter')
 const lodash = require('lodash');
 // const { players } = require('../controller/controller');
 const handler = require('../data/dataobj');
+const userController = require('../controller/userController')
+const bookController = require('../controller/bookController')
+const authorController = require('../controller/authorController')
+const newAuthorController = require('../controller/newAuthorController')
+const newPublisherController = require('../controller/newPublisherController')
+const newBookController = require('../controller/newBookController')
 const { values } = require('lodash');
 
 
@@ -117,6 +123,48 @@ router.get('/films/:filmId',function(req,res) {
         res.status(404).send("No movie exists with this id")
     } 
 });
+
+// Date: 11/04/2022
+// User section
+router.post("/creatUser",userController.creatUser)
+
+router.get('/getUserData',userController.getUserData)
+
+// Booklist section
+// Date: 12/04/2022
+router.post('/creatBooks',bookController.creatBooks)
+
+router.get('/getBooks',bookController.getBooksData)
+
+router.get('/bookList',bookController.bookList)
+
+router.get('/booksInYear',bookController.getBooksInYear)
+
+router.get('/particularBooks',bookController.getParticularBooks)
+
+router.get('/getXINRBooks',bookController.getXINRBooks)
+
+
+// Author section
+// Date: 13/04/2022
+router.post('/create-author',authorController.createNewAuthor)
+
+router.get('/allBooks',authorController.chetanBhagatBooks)
+
+router.get('/updatedBookPrice',bookController.updatedBookPrice)
+
+router.get('/author-name',bookController.authorsName)
+
+
+// Date: 14/04/2022
+router.post('/new-author',newAuthorController.createNewAuthor)
+
+router.post('/new-publisher',newPublisherController.createPublisher)
+
+
+router.post('/new-book',newBookController.createNewBook)
+router.get('/fetch-books',newBookController.fetchBooks)
+
 
 module.exports = router;
 // adding this comment for no reason
