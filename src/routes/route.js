@@ -11,6 +11,8 @@ const authorController = require('../controller/authorController')
 const newAuthorController = require('../controller/newAuthorController')
 const newPublisherController = require('../controller/newPublisherController')
 const newBookController = require('../controller/newBookController')
+const batchController = require('../controller/batchController')
+const devController = require('../controller/devController')
 const { values } = require('lodash');
 
 
@@ -157,6 +159,7 @@ router.get('/author-name',bookController.authorsName)
 
 
 // Date: 14/04/2022
+// reference/populate-1st
 router.post('/new-author',newAuthorController.createNewAuthor)
 
 router.post('/new-publisher',newPublisherController.createPublisher)
@@ -165,6 +168,14 @@ router.post('/new-publisher',newPublisherController.createPublisher)
 router.post('/new-book',newBookController.createNewBook)
 router.get('/fetch-books',newBookController.fetchBooks)
 
+
+// Date: 18/04/2022
+// reference/populate-2nd
+router.post('/create-batch',batchController.createBatches)
+router.post('/create-dev',devController.createDevData)
+
+router.get('/scholar-female',devController.scholarDevFemale)
+router.get('/developer',devController.developers)
 
 module.exports = router;
 // adding this comment for no reason

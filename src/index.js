@@ -22,7 +22,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 
-mongoose.connect('mongodb+srv://Uranium-Batch:aruSjkdGdfhc9MRK@functionup.eel5r.mongodb.net/DeepjyotiSarkar98?retryWrites=true&w=majority', { useNewUrlParser: true })
+mongoose.connect('mongodb+srv://deepJyoti982:deep982@cluster0.hcglv.mongodb.net/deepJyoti982', { useNewUrlParser: true })
 .then(() => console.log('Connected to MongoDB...'))
 .catch(err => console.error('Could not connect to MongoDB...', err));
 app.use(bodyParser.json());

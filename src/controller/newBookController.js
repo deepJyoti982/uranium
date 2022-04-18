@@ -4,7 +4,7 @@ const newPublisherModel = require('../models/newPublisherModel')
 
 const createNewBook = async function(req,res) {
     let newBook = req.body
-    console.log(newBook)
+    // console.log(newBook)
     if(newBook.author && newBook.publisher) {
         if(await newAuthorModel.findById(newBook.author)) {
             if(await newPublisherModel.findById(newBook.publisher)) {
